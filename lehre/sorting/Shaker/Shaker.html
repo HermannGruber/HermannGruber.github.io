@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Cocktail Shaker sort, oder bidirektionaler
+BubbleSort</title>
+<meta content="HTML Tidy for Windows (vers 1st February 2003), see www.w3.org"
+      name="generator" />
+<meta http-equiv="Content-Type" content="text/html" />
+</head>
+<body>
+<img src="http://vg05.met.vgwort.de/na/700250a1195f4622b13b7f80b5cf8d6f" width="1" height="1" alt="">
+<p>
+<p><a href="Shaker-en.html"><img src="../../../images/ambrit.gif" alt="Page in English"/> Page in English</a></p>
+</p>
+<h1>Cocktail Shaker Sort</h1>
+<p>Im folgenden sehen wir, wie der primitive Ansatz des BubbleSort
+mit wenigen Optimierungen dramatisch verbessert werden kann:</p>
+<applet codebase="." code="http://www.hermann-gruber.com/lehre/sorting/Shaker/bubblesort2applet.Applet2.class"
+name="improvedBubbleSort" width="800" height="600" hspace="0"
+vspace="0" align="middle"></applet> 
+<p><b>Legende:</b><br />
+<b>rosa:</b> gr&ouml;&szlig;erer Vergleichspartner<br />
+<b>rot:</b> kleinerer Vergleichspartner<br />
+<b>blau:</b> bereits sortierter Teil</p>
+<p>Der "einfache" BubbleSort wurde in zwei Schritten
+verbessert:</p>
+<ul>
+<li>Nach jedem Durchlauf ("bubble up") wird abgefragt, ob noch zwei
+Elemente vertauscht wurden -&gt; swapped = = false?<br />
+Falls nicht, ist die Liste bereits sortiert -&gt; Abbruch</li>
+<li>Nach jedem Durchlauf von unten nach oben ("bubble up") erfolgt
+ein Durchlauf in Richtung von oben nach unten ("bubble
+down").</li></ul>
+Das Ergebnis ist der sogenannte "Cocktail Shaker Sort" (resp.
+"verbesserter" oder "bidirektionaler Bubble Sort"). Seine Laufzeit
+ist im ung&uuml;nstigsten Fall ("worst case") immer noch
+quadratisch; aber bei fast sortierten Reihungen ("best case") wird
+lineare Laufzeit erreicht.
+</p>
+<p>
+Wir zeigen im folgenden, dass die Laufzeit im schlechtesten Fall immer noch quadratisch ist. Der schlechteste Fall tritt (genau wie bei BubbleSort) dann ein, wenn die gegebene Reihung umgekehrt sortiert ist<sup>1</sup>, also arr=(n,n-1,...3,2,1). 
+ 
+Nach n-1 Vergleichen und n-1 Vertauschungen ist die erste "bubble-up" Phase beendet, und das Element n landet an der gew&uuml;nschten Position; die erste "bubble-down" Phase ben&ouml;tigt weitere n-2 Vergleiche und n-2 Vertauschungen, und das Element 1 landet an der gew&uuml;nschten Position. Die &uuml;brigen n-2 Elemente sind immer noch umgekehrt sortiert. Nach je einem "bubble-up" und "bubble-down" sind die Variablen "start" um 1 erh&ouml;ht und die Variable "ende" um 1 verringert. Die Teilreihung, die vom Cocktail Shaker Sort ab jetzt betrachtet wird, ist also gegen&uuml;ber der urspr&uuml;nglichen Reihung um 2 geschrumpft, und hat noch die L&auml;nge n-2. 
+</p>
+<p>
+Bezeichnet V(n) die Anzahl der Vergleiche, die Cocktail Shaker Sort f&uuml;r eine umgekehrt sortierte Reihung ben&ouml;nigt, so erhalten wir:<br/>
+V(1) = 0 <br/>
+V(2) = 1 <br/>
+F&uuml;r n > 1 :<br/>
+V(n)   = (n-1) + (n-2) + V(n-2) <br/>
+&nbsp;&nbsp;&nbsp; = n-1 + n-2 + n-3 + n-4 + V(n-4)<br/>
+&nbsp;&nbsp;&nbsp; = n-1 + n-2 + n-3 + n-4 + ... + n-(n-2) + n-(n-1) + V(n-(n-1))<br/>
+&nbsp;&nbsp;&nbsp; = n-1 + n-2 + n-3 + n-4 + ... + 2 + 1 + V(1)<br/>
+&nbsp;&nbsp;&nbsp; =  n(n-1)/2.
+</p>
+<h4>Fu&szlig;noten</h4>
+<p>
+<sup>1</sup>Streng genommen m&uuml;ssen wir auch beweisen, dass die umgekehrt sortierte Reihung der schlechteste Fall ist, aber diesen Nachweis (und andere Details) lassen wir hier weg. 
+</p>
+<h4>Links zu Cocktail Shaker Sort:</h4>
+<ul>
+<li>
+<a href="http://www.nist.gov/dads/HTML/bidirectbubl.html">http://www.nist.gov/dads/HTML/bidirectbubl.html</a></li>
+<li>
+<a href="http://de.wikipedia.org/wiki/Cocktail_sort">http://de.wikipedia.org/wiki/Cocktail_sort</a></li>
+<li>
+<a href="http://www.people.fas.harvard.edu/%7Eeisenb/sorting/bidirbubble.html">
+http://www.people.fas.harvard.edu/~eisenb/sorting/bidirbubble.html</a></li></ul>
+<br />
+<br />
+<a href="../sort.html">zur&uuml;ck zur Startseite</a> 
+<p>
+<a href="http://validator.w3.org/check/referer"><img src="http://www.w3.org/Icons/valid-xhtml10"
+     alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</body>
+</html>

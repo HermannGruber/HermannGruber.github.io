@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <title>Finite Automata, Digraph Connectivity, and
+Regular Expression Size
+(Extended Abstract)
+</title>
+    <meta content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style></style>
+  </head>
+  <body>
+  <img src="http://vg05.met.vgwort.de/na/1a4c794fb2d24eed8baedf9c041def87" width="1" height="1" alt=""/>
+  <object data="icalp08.pdf" type="application/pdf" width="100%" height="100%">
+  <p>No PDF plugin is installed for this browser. <a href="icalp08.pdf">Click here</a> to
+  download the PDF.</p>
+<h2>Finite Automata, Digraph Connectivity, and Regular Expression Size (Extended Abstract)</h2>
+  <pre><em>Abstract.</em>Recently lower bounds on the minimum required size for the
+conversion of deterministic finite automata into regular expressions and
+on the required size of regular expressions resulting from applying some
+basic language operations on them, were given by Gelade and Neven [8].
+We strengthen and extend these results, obtaining lower bounds that are
+in part optimal, and, notably, the presented examples are over a binary
+alphabet, which is best possible. To this end, we develop a different, more
+versatile lower bound technique that is based on the star height of regular
+languages. It is known that for a restricted class of regular languages, the
+star height can be determined from the digraph underlying the transition
+structure of the minimal finite automaton accepting that language. In
+this way, star height is tied to cycle rank, a structural complexity measure
+for digraphs proposed by Eggan and Büchi, which measures the degree
+of connectivity of directed graphs.
+
+<em>Introduction</em>
+One of the most basic theorems in formal language theory is that every regular
+expression can be effectively converted into an equivalent finite automaton, and
+vice versa [16]. While algorithms accomplishing these tasks have been known for
+a long time, there has been a renewed interest in these classical problems during
+the last few years. For instance, new algorithms for converting regular expressions
+into finite automata outperforming classical algorithms have been found only
+recently, as well as a matching lower bound of Ω(n · log2 n) on the number of
+transitions required by any equivalent nondeterministic finite automaton (NFA).
+The lower bound is, however, only attained for growing alphabet size, and a
+better algorithm is known for constant alphabet size, see [26] for the current
+state of the art.
+In contrast, much less is known about the converse direction, namely of con-
+verting finite automata into regular expressions. Apart from the fundamental
+nature of the problem, some applications lie in control flow normalization, in-
+cluding uses in software engineering such as automatic translation of legacy
+code [20]. All known algorithms covering the general case of infinite languages
+are based on the classical ones, which are compared in the survey [25]. The
+drawback is that all of these (structurally similar) algorithms return expressions
+of size 2O(n) in the worst case, and Ehrenfeucht and Zeiger exhibit a family
+of languages over an alphabet of size n2 for which this exponential blow-up is
+inevitable [6]. These examples naturally raise the question whether a size blow-
+Ω(n)up of 2 can also occur for constant alphabet size, a question posed in [7].
+One of the main results in this paper is a positive answer to this question, even
+in the case of a binary alphabet; note that the conversion problem becomes
+polynomial for unary languages [7]. Currently, there are not many lower bound
+techniques for regular expression size. A notable exception is the technique used
+in the above mentioned work [6], which however requires, in its original version,
+a largely growing alphabet. Recently, a variation of Ehrenfeucht and Zeiger’s
+method was used in [8] to get similar but weaker lower bounds on the conver-
+sion problem for small alphabets. The above mentioned question, however, was
+left open. A technique based on communication complexity that applies only for
+finite languages, is proposed in [10]. They give an optimal bound of nΘ(log n) for
+the conversion problem in the case of finite languages.
+Independently of [8], we take a different direction, by relating the descrip-
+tional complexity of regular languages (alphabetic width) to their structural
+complexity (star height). The star height is a structural complexity measure of
+regular languages that has been intensively studied in the literature for more
+than 40 years, see [11,15] for a recent treatment. Determining the star height
+can be in some cases reduced to the easier task of determining the cycle rank
+of a certain digraph. The latter concept is related to the cycle rank of digraphs,
+a digraph connectivity measure defined by Eggan and Büchi [5] in the 1960s.
+Since measuring the connectivity of digraphs is a very active research area, see,
+e.g., [1,2,14,22], and as we feel that cycle rank is a interesting concept in its own
+right, we summarize and further develop the theory of cycle rank. For a more
+thorough treatment, including all proofs and comparison to some other recently
+proposed measures we refer to [9]. These connections turn out to be fruitful,
+allowing not only for proving a tight lower bound on the problem of convert-
+ing finite automata into regular expressions, but also for giving reasonably good
+lower bounds for the alphabetic width of some basic regular language operations,
+namely intersection, complement, and shuffle. In this way, we independently im-
+prove on and extend the recently obtained results in [8]—we summarize and
+compare the obtained results in Table 1.
+  </pre>
+  </object>
+  </body>
+</html>

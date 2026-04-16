@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="HTML Tidy for Windows (vers 1st February 2003), see www.w3.org"
+      name="generator" />
+<meta http-equiv="Content-Type" content="text/html" />
+<title>Quicksort</title>
+</head>
+<body>
+<img src="http://vg05.met.vgwort.de/na/b9954d2c4359425ca6a2c1f9b1ba58eb" width="1" height="1" alt="">
+<p><a href="Quick.html"><img src="../../../images/german.gif" alt="Seite auf deutsch"/> Seite auf deutsch</a></p>
+<h1>Quicksort</h1>
+<p>Quicksort was invented in 1962 by C.A.R. Hoare. It is the fastest comparison-based sorting algorithm in practice.</p>
+<br />
+<applet codebase="." code="http://www.hermann-gruber.com/lehre/sorting/Quick/visapplet.Applet1.class"
+name="TestApplet" width="800" height="600" hspace="0" vspace="0"
+align="middle"></applet> 
+<p><b>Legend:</b><br />
+<b>pink:</b> greater value in current comparison<br />
+<b>red:</b> smaller value in current comparison<br />
+<b>yellow:</b> pivot element<br />
+<b>orange:</b> the part that is already sorted<br />
+<b>blue:</b> animation running</p>
+<br />
+<p>The idea is the following:</p>
+<ol>
+<li>If the array contains less than two items, we are finished.</li>
+<li>Remove an (arbitrary) element p from the array R.</li>
+<li>Then partition the array into two sub-arrays
+R<sub>1</sub> and R<sub>2</sub>, with<br />
+ R<sub>1</sub> = {x in R | x&lt;p} and R<sub>2</sub> = {x in R |
+x&gt;=p}</li>
+<li>Each element in R<sub>2</sub> is greater than the greatest element
+in R<sub>1</sub>. Thus we can sort the two subarrays
+independently. We start with each of the two subarrays at step 1.</li>
+</ol>
+<p>When implementing this idea it is of central importance that
+the partitioning step is carried out efficiently. Another interesting 
+point is the choice of the pivot element p. For simplicity, we 
+take the rightmost item in this implementation. Quicksort performs
+best if the recursion tree is as well-balanced as possible. Then the 
+running time (in O-notation) is O(n log n). In the worst case, however,
+the recursion tree is entirely unbalanced, and the running time becomes
+quadratic. Since we always choose the rightmost element as the pivot element,
+the worst-case input is an array that is entirely sorted. 
+</p>
+<p>
+If we use instead an implementation where the pivot element is chosen in each round
+at random, the expected running time will be in O(n log n). This expected running time 
+holds on each input (in particular on worst-case inputs)<sup>1</sup>. 
+Observe that in this case, we talk about a <em>randomized algorithm</em>, 
+where the running time depends on 
+the random choices. There the running time is a random variable, and thus we are interested in the 
+<em>expected value</em> of the running time on a given input (e.g. a best-case, or worst-case input).
+</p>
+<p>
+<h4>Footnotes:</h4>
+<sup>1</sup> <em>Beware!</em> The expected running time on worst-case input of a randomized algorithm is often confused 
+with the running time of a non-randomized algorithm on average-case input. But the first concept is the expected value over the random choices the algorithm makes on a single input (only a single input involved, but many random choices). The second concept is the arithmetic mean of the running times on all possible inputs (many different inputs involved, but no randomness). By the way, for randomized algorithms, it also makes sense to speak about the expected average-case running time, but let not take the discussion too far... 
+<h4>References:</h4>
+<ul>
+<li>C.A.R. Hoare: Quicksort. Computer Journal, Vol. 5, 1, 10-15 (1962)</li>
+</ul>
+</p>
+<h4>Weblinks on Quicksort:</h4> 
+<ul>
+<li>
+<a href="http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/quick/quicken.htm">
+http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/quick/quicken.htm</a></li>
+<li>
+<a href="http://www.nist.gov/dads/HTML/quicksort.html">http://www.nist.gov/dads/HTML/quicksort.html</a>)</li>
+<li>
+<a href="http://www.wikipedia.org/wiki/Quicksort">http://en.wikipedia.org/wiki/Quicksort</a></li>
+<li>
+<a href="http://www.people.fas.harvard.edu/~eisenb/sorting/quick.html">
+http://www.people.fas.harvard.edu/~eisenb/sorting/quick.html</a></li></ul>
+<br />
+<br />
+<a href="../sort-en.html">back to the start page</a> 
+<p>
+<a href="http://validator.w3.org/check/referer"><img src="http://www.w3.org/Icons/valid-xhtml10"
+     alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</body>
+</html>

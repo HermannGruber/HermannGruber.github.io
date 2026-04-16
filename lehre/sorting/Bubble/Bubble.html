@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="HTML Tidy for Windows (vers 1st February 2003), see www.w3.org"
+      name="generator" />
+<title>Bubble Sort</title>
+</head>
+<body>
+<img src="http://vg05.met.vgwort.de/na/172879fb1d404821b48a4343d99a8cd4" width="1" height="1" alt="">
+<p>
+<p><a href="Bubble-en.html"><img src="../../../images/ambrit.gif" alt="Page in English"/> Page in English</a></p>
+</p>
+<h1>Bubble Sort</h1>
+<p>Bubble Sort ist ein einfach zu verstehender
+Sortieralgorithmus: Es werden soviele Runden absolviert wie die Reihung lang ist; In
+jeder Runde werden von vorne bis hinten je zwei Werte verglichen.
+Wenn der "linke" Wert gr&ouml;&szlig;er ist als der rechte, werden
+die beiden Werte vertauscht. So steigen in jeder Runde
+gr&ouml;&szlig;ere Werte -- wie Blasen im Wasser -- von unten nach
+oben (daher der Name). Jedoch hat dieses Verfahren viele Nachteile, siehe der Text unterhalb des Applets.</p>
+<p><em>Update 21.02.2008:</em><br/> 
+Auch der amerikanische Pr&auml;sidentschaftskandidat <a href="http://www.barackobama.com/">Barack Obama</a> 
+wei&szlig; offenbar &uuml;ber die enormen Nachteile von Bubble Sort Bescheid. Mehr dazu <a href="Obama.html">hier</a>.</p>
+<p>
+<applet codebase="." code="http://www.hermann-gruber.com/lehre/sorting/Bubble/bubblingsort.Applet2.class"
+name="TestApplet" width="800" height="600" hspace="0" vspace="0"
+align="middle"></applet> 
+<p><b>Legende:</b><br />
+<b>rosa:</b> gr&ouml;&szlig;erer Vergleichspartner<br />
+<b>rot:</b> kleinerer Vergleichspartner<br />
+<b>blau:</b> bereits sortierter Teil</p>
+<p>
+Die Laufzeit von Bubble Sort ist sehr hoch, verglichen mit (fast) allen anderen Sortierverfahren<sup>1</sup>. Im englischen 
+Referenzwerk "The Art of Computer Programming" [1] wird dieser Algorithmus ausf&uuml;hrlich analysiert,
+mit dem Fazit, dass die <b>einzigen Vorteile</b> von Bubble Sort sein einpr&auml;gsamer Name, 
+und die Tatsache, dass die Laufzeitanalyse des Algorithmus zu interessanten mathematischen 
+Fragestellungen f&uuml;hrt, sind [1, S. 110 und 140]. Das am einfachsten zu programmierende Verfahren ist 
+laut derselben Quelle <it>InsertionSort</it>, was f&uuml;r bis zu 25 Elemente sogar sehr schnell ist, 
+f&uuml;r wenig gr&ouml;&szlig;ere Eingaben wird auch dieses Verfahren jedoch sehr langsam. Hier sollte ein rekursives
+Verfahren wie <a href="../Quick/Quick.html">QuickSort</a> substituiert werden, oder falls gute Laufzeit 
+im schlechtesten Fall garantiert werden soll,  die geringf&uuml;gig langsameren Verfahren <em>HeapSort</em> oder 
+<a href="../Merge/Merge.html">MergeSort</a>. Dennoch scheint - gem&auml;&szlig; einer aktuellen Studie [2] -
+Bubble Sort ungebrochene Popularit&auml;t zu genie&szlig;en, die die anderen genannten Sortierverfahren sogar noch 
+&uuml;bersteigt.
+</p>
+<sup>1</sup> es gibt aber ein total b...es Verfahren mit noch viel schlechterer Laufzeit, n&auml;mlich 
+<a href="../../../papers.html#education">BogoSort</a>, dessen erwartete Laufzeit etwa (n+1) x n x (n-1) x (n-2) x... x 4 x 3 x 2 x 1 
+ist [3].
+</p>
+<h4>Danksagungen</h4>
+<p><em>Update 10.12.2008:</em> Vielen Dank an Tim Tempel f&uuml;r das 
+Aufsp&uuml;ren eines Fehlers im Java-Applet auf dieser Seite. 
+Der Fehler ist nun behoben.
+</p>
+
+<h4>Literatur (englisch):</h4>
+<p>
+[1] D. E. Knuth. The Art of Computer Programming. Volume 3: Sorting and Searching, Second Edition. Addison-Wesley, 1997. ISBN 0-201-89685-0.<br/>
+[2] Owen Astrachan. <a href="http://www.cs.duke.edu/~ola/bubble/presentation.html">Bubble Sort: An Archaeological Algorithmic Analysis.</a> 34th ACM Technical Symposium on Computer Science Education, 2003<br/>
+[3] H. Gruber, M. Holzer und O. Ruepp): <a href="../../../papers.html#education">"Sorting the Slow Way: An Analysis of Perversely Awful Randomized Sorting Algorithms"</a>, 4th International Conference on Fun with Algorithms, 2007, Lecture Notes in Computer Science 4475, pp. 183-197
+</p>
+<h4>Links zu Bubble Sort:</h4>
+<ul>
+<li>
+<a href="http://www.nist.gov/dads/HTML/bubblesort.html">http://www.nist.gov/dads/HTML/bubblesort.html</a></li>
+<li>
+<a href="http://de.wikipedia.org/wiki/Bubble_Sort">http://www.wikipedia.org/wiki/Bubble_sort</a></li>
+<li>
+<a href="http://www.people.fas.harvard.edu/~eisenb/sorting/knuthbubble.html">
+http://www.people.fas.harvard.edu/~eisenb/sorting/knuthbubble.html</a></li></ul>
+<br />
+<br />
+<a href="../sort.html">zur&uuml;ck zur Startseite</a> 
+<p>
+<a href="http://validator.w3.org/check/referer"><img src="http://www.w3.org/Icons/valid-xhtml10"
+     alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+
+</body>
+</html>

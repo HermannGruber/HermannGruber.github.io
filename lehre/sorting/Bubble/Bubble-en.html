@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Bubble Sort</title>
+</head>
+<body>
+<img src="http://vg05.met.vgwort.de/na/951057edddf64c1e92543c0fb3e9a5d4" width="1" height="1" alt="">
+<p><a href="Bubble.html"><img src="../../../images/german.gif" alt="Seite auf deutsch"/> Seite auf deutsch</a></p>
+<h1>Bubble Sort</h1>
+<p>Bubble Sort is a sorting algorithm that is easy to understand: It makes as many rounds
+as there are items in the array; in each round, the values of two adjacent items in 
+the array are compared. If the "left" value is larger than the "right" value,
+the items are swapped. In this manner, in each round the large values go upward,
+like air bubbles under water (this also why the algorithm bears this name). 
+ 
+Despite its simplicity, this algorithm has some serious drawbacks, see the text below the applet.
+</p>
+<p><em>Update 21.02.2008:</em><br/> 
+Perhaps surprisingly, also the american president <a href="http://www.barackobama.com/">Barack Obama</a> knows the 
+disadvantages of Bubble Sort. For details, take a look at <a href="Obama-en.html">this</a>.</p>
+<p>
+<applet codebase="." code="http://www.hermann-gruber.com/lehre/sorting/Bubble/bubblingsort.Applet2.class"
+name="TestApplet" width="800" height="600" hspace="0" vspace="0"
+align="middle"></applet> 
+<p><b>Legend:</b><br />
+<b>pink:</b> greater value in current comparison<br />
+<b>red:</b> smaller value in current comparison<br />
+<b>blue:</b> the part that is already sorted</p>
+<p>
+The running time of Bubble Sort very high compared to (almost) all other sorting algorithms<sup>1</sup>. 
+In Knuth's reference work "The Art of Computer Programming" [1] this algorithm is analyzed in detail.
+The bottom line is that the <b>only advantages</b> of Bubble Sort are a sticky name and the fact 
+that the analysis of its running time leads to mathematically interesting questions [1, p. 110 and 140]. 
+
+According to Knuth, the algorithm that is most easily implemented is <it>InsertionSort</it> (and not Bubble Sort),
+which is also very fast when sorting up to 25 elements, but also that algorithm is very slow on
+arrays that a few orders of magnitude larger than this. For large arrays, it is advisable to use instead a
+recursive algorithm like <a href="../Quick/Quick-en.html">QuickSort</a>. Other options are <em>HeapSort</em>, 
+or <a href="../Merge/Merge-en.html">MergeSort</a>, 
+which are slightly slower on average, but guarantee fast running time also in the worst-case. 
+Nevertheless, a recent study [2] shows that Bubble Sort still enjoys great popularity, which even exceeds
+that of the other sorting routines discussed above.
+</p>
+<sup>1</sup> there is also perversely awful sorting routine with even worse running time, namely 
+<a href="../../../papers.html#education">BogoSort</a>: its expected running time is about (n+1) x n x (n-1) x (n-2) x... x 4 x 3 x 2 x 1, see [3].
+</p>
+<h4>Thanks</h4>
+<p><em>Update 10.12.2008:</em> Many thanks go out to Tim Tempel who found a bug in the Java applet on this page. That bug is now fixed.
+</p>
+
+<h4>References:</h4>
+<p>
+[1] D. E. Knuth. The Art of Computer Programming. Volume 3: Sorting and Searching, Second Edition. Addison-Wesley, 1997. ISBN 0-201-89685-0.<br/>
+[2] Owen Astrachan. <a href="http://www.cs.duke.edu/~ola/bubble/presentation.html">Bubble Sort: An Archaeological Algorithmic Analysis.</a> 34th ACM Technical Symposium on Computer Science Education, 2003<br/>
+[3] H. Gruber, M. Holzer und O. Ruepp): <a href="../../../papers.html#education">"Sorting the Slow Way: An Analysis of Perversely Awful Randomized Sorting Algorithms"</a>, 4th International Conference on Fun with Algorithms, 2007, Lecture Notes in Computer Science 4475, pp. 183-197
+</p>
+<h4>Weblinks on Bubble Sort:</h4>
+<ul>
+<li>
+<a href="http://www.nist.gov/dads/HTML/bubblesort.html">http://www.nist.gov/dads/HTML/bubblesort.html</a></li>
+<li>
+<a href="http://en.wikipedia.org/wiki/Bubble_Sort">http://en.wikipedia.org/wiki/Bubble_Sort</a></li>
+<li>
+<a href="http://www.people.fas.harvard.edu/~eisenb/sorting/knuthbubble.html">
+http://www.people.fas.harvard.edu/~eisenb/sorting/knuthbubble.html</a></li></ul>
+<br />
+<br />
+<a href="../sort-en.html">back to the start page</a> 
+<p>
+<a href="http://validator.w3.org/check/referer"><img src="http://www.w3.org/Icons/valid-xhtml10"
+     alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+
+</body>
+</html>

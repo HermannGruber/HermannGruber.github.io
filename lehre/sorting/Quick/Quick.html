@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="HTML Tidy for Windows (vers 1st February 2003), see www.w3.org"
+      name="generator" />
+<meta http-equiv="Content-Type" content="text/html" />
+<title>Quicksort</title>
+</head>
+<body>
+<img src="http://vg05.met.vgwort.de/na/39a520f69c724b8d98bbb148a3e8e957" width="1" height="1" alt="">
+<p><a href="Quick-en.html"><img src="../../../images/ambrit.gif" alt="Page in English"/> Page in English</a></p>
+<h1>Quicksort</h1>
+<p>Quicksort wurde 1962 von C.A.R. Hoare erfunden. Er erweist sich
+in der Praxis als der schnellste Sortieralgorithmus.</p>
+<br />
+<applet codebase="." code="http://www.hermann-gruber.com/lehre/sorting/Quick/visapplet.Applet1.class"
+name="TestApplet" width="800" height="600" hspace="0" vspace="0"
+align="middle"></applet> 
+<p><b>Legende:</b><br />
+<b>rosa:</b> gr&ouml;sserer Vergleichspartner<br />
+<b>rot:</b> kleinerer Vergleichspartner<br />
+<b>gelb:</b> Pivot-Element<br />
+<b>orange:</b> bereits sortiertes Teil-Array<br />
+<b>blau:</b> Animation aktiv</p>
+<br />
+<p>Die Idee ist wie folgt:</p>
+<ol>
+<li>Falls die Reihung weniger als zwei Elemente enth&auml;lt, sind
+wir bereits fertig.</li>
+<li>Man nimmt ein (beliebiges) Element p aus der Reihung R
+heraus.</li>
+<li>Dann partitioniert man die Reihung in zwei Teilreihungen
+R<sub>1</sub> und R<sub>2</sub>:<br />
+ R<sub>1</sub> = {x in R | x&lt;p} und R<sub>2</sub> = {x in R |
+x&gt;=p}</li>
+<li>Jedes Element in R<sub>2</sub> ist gr&ouml;&szlig;er als das
+gr&ouml;&szlig;te Element in R<sub>1</sub>. Die beiden
+Teilreihungen k&ouml;nnen jetzt unabh&auml;ngig voneinander
+sortiert werden. Man geht also f&uuml;r beide wieder zu Schritt
+1.</li></ol>
+<p>Bei der Implementierung ist es wichtig, dass die Partitionierung
+schnell von statten geht. Ein wichtiger Punkt ist auch die Wahl des
+Pivot-Elementes p. Bei uns wird der Einfachheit halber f&uuml;r p
+immer das rechte Element genommen. Am schnellsten l&auml;uft
+Quicksort, wenn der Aufrufbaum m&ouml;glichst balanciert ist. Die
+Laufzeit in (O-Notation) ist dann O(n log n). Im schlechtesten Fall
+einer bereits sortierten Reihe ist der Aufrufbaum unbalanciert, und
+die Laufzeit wird quadratisch. W&uuml;rde f&uuml;r p stattdessen
+immer ein <i>zuf&auml;lliges</i> Element ausgew&auml;hlt, so
+w&auml;re die erwartete Laufzeit bei <i>beliebiger</i> Eingabe
+wieder O(n log n).</p>
+<h4>Literatur:</h4>
+<ul>
+<li>C.A.R. Hoare: Quicksort. Computer Journal, Vol. 5, 1, 10-15
+(1962)</li>
+</ul>
+<h4>Verweise zu Quicksort:</h4> 
+<ul>
+<li>
+<a href="http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/quick/quicken.htm">
+http://www.iti.fh-flensburg.de/lang/algorithmen/sortieren/quick/quicken.htm</a></li>
+<li>
+<a href="http://www.nist.gov/dads/HTML/quicksort.html">http://www.nist.gov/dads/HTML/quicksort.html</a>)</li>
+<li>
+<a href="http://www.wikipedia.org/wiki/Quicksort">http://www.wikipedia.org/wiki/Quicksort</a></li>
+<li>
+<a href="http://www.people.fas.harvard.edu/~eisenb/sorting/quick.html">
+http://www.people.fas.harvard.edu/~eisenb/sorting/quick.html</a></li></ul>
+<br />
+<br />
+<a href="../sort.html">zur&uuml;ck zur Startseite</a> 
+<p>
+<a href="http://validator.w3.org/check/referer"><img src="http://www.w3.org/Icons/valid-xhtml10"
+     alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</body>
+</html>

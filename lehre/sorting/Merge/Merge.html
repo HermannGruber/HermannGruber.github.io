@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="HTML Tidy for Windows (vers 1st February 2003), see www.w3.org"
+      name="generator" />
+<meta http-equiv="Content-Type" content="text/html" />
+<title>Mergesort</title>
+</head>
+
+<body>
+<img src="http://vg05.met.vgwort.de/na/9667c93e5d6e4dd7bb013ad58e22df5e" width="1" height="1" alt="">
+<p><a href="Merge-en.html"><img src="../../../images/ambrit.gif" alt="Page in English"/> Page in English</a></p>
+<h1>Mergesort</h1>
+<p>Mergesort ist ein sehr effizientes Sortierverfahren, das nach
+dem "divide and conquer"-Prinzip arbeitet und daher stark auf
+Rekursion basiert.<br />
+<applet codebase="." code="http://www.hermann-gruber.com/lehre/sorting/Merge/visapplet.Applet1.class"
+name="TestApplet" width="800" height="600" hspace="0" vspace="0"
+align="middle"></applet></p>
+<br />
+<p><b>Legende:</b><br />
+<b>rosa:</b> gr&ouml;&szlig;erer Vergleichspartner<br />
+<b>rot:</b> kleinerer Vergleichspartner<br />
+<b>gelb:</b> tempor&auml;res Array<br />
+<b>orange:</b> teilsortiertes Array<br />
+<b>blau:</b> Animation aktiv
+<br />
+<br />
+</p>
+
+Die Idee ist wie folgt:<br/>
+<ol>
+<li>Falls die Reihung weniger als zwei Elemente enth&auml;lt, sind
+wir bereits fertig.</li>
+<li>Ansonsten wird die Reihung immer wieder rekursiv in zwei gleich
+gro&szlig;e H&auml;lften aufgespalten, bis Reihungen der Gr&ouml;&szlig;e 1 erreicht
+sind;</li>
+<li>Dann werden je zwei bereits sortierte Teilreihen zu einer
+groesseren sortierten Teilreihung zusammengef&uuml;hrt ("merged").</li>
+</ol>
+
+
+
+Das Vorgehen beim "merging" erschlie&szlig;t sich am einfachsten am
+Beispiel:<br />
+<ul><li>
+arr = 2,3,5,4,6 besteht aus den bereits sortierten
+Teilreihungen<br/>
+arr<sub>1</sub> = 2,3,5 und arr<sub>2</sub> = 4,6.</li><li>
+ein tempor&auml;res Array der L&auml;nge 5 wird wie folgt
+belegt:<br/>
+temp = 2,3,5,6,4 - also arr<sub>1</sub>, gefolgt von arr<sub>2</sub> von hinten herein gelesen.
+</li>
+<li>Dann geht man von vorne und hinten simultan durch das
+tempor&auml;re array, und schreibt die Werte nach groesse geordnet
+in arr hinein:</li>
+<li><ul><li>
+2 &lt;= 4, damit arr [0] = 2; gehe von vorne her eins nach rechts.
+("i++")<br /></li><li>
+3 &lt;= 4, damit arr [1] = 3; gehe von vorne her eins nach rechts.
+("i++")<br /></li><li>
+5 &gt; 4, damit arr[2] = 4; gehe von hinten her eins nach links.
+("j--")<br /></li><li>
+5 &lt;= 6, damit arr[3] = 5; gehe von vorne her eins nach rechts.
+("i++")<br /></li><li>
+und zuletzt wird noch die &uuml;brige 6 untergebracht:<br />
+6 &lt;= 6, damit arr[4] = 6; gehe von vorne her eins nach rechts.
+("i++")<br /></li>
+</ul>
+Nun haben sich die Indizes gekreuzt ( j&lt;i ), und wir sind
+fertig.
+</li>
+</ul>
+
+
+<p>Die Laufzeit l&auml;sst sich wie folgt bestimmen: Gerade haben
+wir gesehen, das f&uuml;r das "Merging" einer Reihung der
+L&auml;nge n genau n Vergleiche ben&ouml;tigt werden. Nun kann man
+eine Rekursionsgleichung fuer die Anzahl der Vergleiche aufstellen,
+die etwa so aussieht:</p>
+<p>V(n) = 2 V(n/2) + n</p>
+<p>Denn zum Sortieren eines Feldes der L&auml;nge n muss man erst
+zwei Felder (ungef&auml;hr) der halben L&auml;nge sortieren, und
+dann die beiden Felder mischen, was n Vergleiche kostet. Die
+L&ouml;sung dieser Rekursionsgeleichung f&uuml;hrt - im besten wie
+auch im schlechtesten Fall auf eine Laufzeit von O(n log n).<br />
+<h4>Literatur:</h4>
+Eine exakte Laufzeitanalyse findet sich beispielsweise in:<br />
+"Steger, Angelika: Diskrete Strukturen. Band 1; Kap.4.1.1"</p>
+<h4>Links zu Mergesort:</h4>
+<ul>
+<li>
+<a href="http://www.nist.gov/dads/HTML/mergesort.html">http://www.nist.gov/dads/HTML/mergesort.html</a></li>
+<li>
+<a href="http://www.wikipedia.org/wiki/merge_sort">http://www.wikipedia.org/wiki/merge_sort</a></li>
+<li>
+<a href="http://www.people.fas.harvard.edu/%7Eeisenb/sorting/merge.html">
+http://www.people.fas.harvard.edu/~eisenb/sorting/merge.html</a></li></ul>
+<br />
+<br />
+<a href="../sort.html">zur&uuml;ck zur Startseite</a> 
+<p>
+<a href="http://validator.w3.org/check/referer"><img src="http://www.w3.org/Icons/valid-xhtml10"
+     alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</body>
+</html>

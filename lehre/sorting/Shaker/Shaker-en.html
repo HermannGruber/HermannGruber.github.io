@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Cocktail Shaker sort, oder bidirektionaler
+BubbleSort</title>
+<meta content="HTML Tidy for Windows (vers 1st February 2003), see www.w3.org"
+      name="generator" />
+<meta http-equiv="Content-Type" content="text/html" />
+</head>
+<body>
+<img src="http://vg05.met.vgwort.de/na/309b69b7d681417fb46ea57067c7bc8b" width="1" height="1" alt="">
+<p><a href="Shaker.html"><img src="../../../images/german.gif" alt="Seite auf deutsch"/> Seite auf deutsch</a></p>
+<h1>Cocktail Shaker Sort</h1>
+<p>In the following, we see how the primitive approach of BubbleSort can be considerably improved, by adding a few
+simple twists:</p>
+<applet codebase="." code="http://www.hermann-gruber.com/lehre/sorting/Shaker/bubblesort2applet.Applet2.class"
+name="improvedBubbleSort" width="800" height="600" hspace="0"
+vspace="0" align="middle"></applet> 
+<p><b>Legend:</b><br />
+<b>pink:</b> greater value in current comparison<br />
+<b>red:</b> smaller value in current comparison<br />
+<b>blue:</b> the part that is already sorted</p>
+<p>
+<p>We added two twists to the basic BubbleSort routine:</p>
+<ul>
+<li>In each round ("bubble up"), we remember whether 
+we still found any two elements that needed to be swapped
+-&gt; swapped = = false?<br />
+If not, the list is already sorted -&gt; break.</li>
+<li>After each round from bottom to top ("bubble up") we 
+make a round from top to bottom ("bubble down").</li>
+</ul>
+The result is the so-called "Cocktail Shaker Sort" (resp.
+"improved" or "bidirectional BubbleSort"). Its running time 
+is still quadratic in the worst case; but in the best case 
+it attains linear running time.
+</p>
+<p>
+In the following, we show that the worst-case running time is still quadratic. The worst case happens (as with BubbleSort) when we are given an inversely sorted array<sup>1</sup>, that is, arr=(n,n-1,...3,2,1). 
+
+After n-1 comparisons and n-1 swaps the first "bubble up" round is finished. The element n has arrived at its final position. The first "bubble down" round takes another n-1 comparisons and n-1 swaps. Then the element 1 has arrived at its final position. The remaining n-2 elements are still in reverse order, and each element has been moved back to its initial position. After one "bubble up" round and one "bubble down" round, the variables "start" is increased by 1 and "ende" is decreased by 1. The subarray considered by Cocktail Shaker Sort from now on is shrunk by 2 elements, and is of length n-2.</p>
+<p>
+Letting V(n) denote the number of comparisons carried out by Cocktail Shaker Sort on an inversely sorted array,
+we obtain:<br/>
+V(1) = 0 <br/>
+V(2) = 1 <br/>
+For n > 1 :<br/>
+V(n)   = (n-1) + (n-2) + V(n-2) <br/>
+&nbsp;&nbsp;&nbsp; = n-1 + n-2 + n-3 + n-4 + V(n-4)<br/>
+&nbsp;&nbsp;&nbsp; = n-1 + n-2 + n-3 + n-4 + ... + n-(n-2) + n-(n-1) + V(n-(n-1))<br/>
+&nbsp;&nbsp;&nbsp; = n-1 + n-2 + n-3 + n-4 + ... + 2 + 1 + V(1)<br/>
+&nbsp;&nbsp;&nbsp; =  n(n-1)/2.
+</p>
+<h4>Footnotes</h4>
+<p>
+<sup>1</sup>For a rigorous proof, we would also need to argue that there are no other cases which are still worse than an inversely sorted array, but we skipped this and other details for simplicity. 
+</p>
+<h4>Weblinks on Cocktail Shaker Sort:</h4>
+<ul>
+<li>
+<a href="http://www.nist.gov/dads/HTML/bidirectbubl.html">http://www.nist.gov/dads/HTML/bidirectbubl.html</a></li>
+<li>
+<a href="http://en.wikipedia.org/wiki/Cocktail_sort">http://en.wikipedia.org/wiki/Cocktail_sort</a></li>
+<li>
+<a href="http://www.people.fas.harvard.edu/%7Eeisenb/sorting/bidirbubble.html">
+http://www.people.fas.harvard.edu/~eisenb/sorting/bidirbubble.html</a></li></ul>
+<br />
+<br />
+<a href="../sort-en.html">back to the start page</a> 
+<p>
+<a href="http://validator.w3.org/check/referer"><img src="http://www.w3.org/Icons/valid-xhtml10"
+     alt="Valid XHTML 1.0!" height="31" width="88" /></a></p>
+</body>
+</html>
