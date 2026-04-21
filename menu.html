@@ -7,27 +7,48 @@
 <meta name="generator" content=
 "HTML Tidy for Windows (vers 12 April 2005), see www.w3.org" />
 <title></title>
+<script type="text/javascript">
+(function () {
+	function loadInContentPane(event) {
+		var link = event.target.closest("a[href]");
+		if (!link) {
+			return;
+		}
+
+		try {
+			if (window.parent && window.parent !== window && window.parent.frames && window.parent.frames.data) {
+				event.preventDefault();
+				window.parent.frames.data.location.href = link.href;
+			}
+		} catch (err) {
+			/* ignore cross-frame access issues and fall back to normal navigation */
+		}
+	}
+
+	document.addEventListener("click", loadInContentPane);
+})();
+</script>
 </head>
 <body>
 
 <h2>Hauptseite</h2>
-<a href="main.html" target="data">Home</a>
+<a href="main.html">Home</a>
 <h2>Publikationen (engl.)</h2>
-<a href="papers.html#book" target="data">Fachb&uuml;cher</a><br/>
-<a href="papers.html#journal" target="data">Artikel in Fachzeitschriften
-<a href="papers.html#conference" target="data">Konferenzbeitr&auml;ge</a><br/>
-<a href="papers.html#techreport" target="data">Technische Berichte</a><br/>
-<a href="papers.html#other" target="data">Andere Publikationen</a><br/>
+<a href="papers.html#book">Fachb&uuml;cher</a><br/>
+<a href="papers.html#journal">Artikel in Fachzeitschriften</a><br/>
+<a href="papers.html#conference">Konferenzbeitr&auml;ge</a><br/>
+<a href="papers.html#techreport">Technische Berichte</a><br/>
+<a href="papers.html#other">Andere Publikationen</a><br/>
 <h2>Tutorials</h2>
 <h3>deutsche Version</h3>
 (mit F. Wimmer)<br/>
 <a href="lehre/sorting/sort.html"
-target="data">Sortieralgorithmen</a>
+>Sortieralgorithmen</a>
 online, incl. Java Applets.<br/>
 <h3>English version</h3>
 (with F. Wimmer)<br/>
 <a href="lehre/sorting/sort-en.html"
-target="data">Sorting algorithms</a>
+>Sorting algorithms</a>
 online, incl. Java Applets.<br/>
 <h2>Page under construction</h2>
 More content following soon...<br/>
