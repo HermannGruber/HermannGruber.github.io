@@ -7,18 +7,60 @@
 <meta name="generator" content=
 "HTML Tidy for Windows (vers 12 April 2005), see www.w3.org" />
 <title>Hermann Gruber's Homepage</title>
+<style type="text/css">
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.layout {
+	display: flex;
+	min-height: 100vh;
+}
+
+.layout-nav {
+	width: 280px;
+	min-width: 280px;
+	border: 0;
+	height: 100vh;
+}
+
+.layout-content {
+	flex: 1;
+	border: 0;
+	height: 100vh;
+}
+
+@media (max-width: 900px) {
+	.layout {
+		flex-direction: column;
+	}
+
+	.layout-nav {
+		width: 100%;
+		min-width: 0;
+		height: 40vh;
+	}
+
+	.layout-content {
+		height: 60vh;
+	}
+}
+</style>
 </head>
-<frameset cols="280,*">
-<frame src="menu.html" name="navigation" id="navigation" />
-<frame src="main.html" name="data" id="data" />
-<noframes>
-<body><p>
+<body>
+<div class="layout">
+<iframe src="menu.html" name="navigation" id="navigation" class="layout-nav" title="Navigation"></iframe>
+<iframe src="main.html" name="data" id="data" class="layout-content" title="Inhalt"></iframe>
+</div>
+<noscript>
+<p>
 Ihr Browser unterst&uuml;tzt leider keine Frames und 
 kann diese Seite leider nicht anzeigen!<br/>
 <a href="main.html">Zur Einstiegsseite (ohne Menue!)</a><br/>
 <a href="menu.html">Zum Menue</a>
 </p>
+</noscript>
 </body>
-</noframes>
-</frameset>
 </html>
