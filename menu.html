@@ -7,27 +7,6 @@
 <meta name="generator" content=
 "HTML Tidy for Windows (vers 12 April 2005), see www.w3.org" />
 <title></title>
-<script type="text/javascript">
-(function () {
-	function loadInContentPane(event) {
-		var link = event.target.closest("a[href]");
-		if (!link) {
-			return;
-		}
-
-		try {
-			if (window.parent && window.parent !== window && window.parent.frames && window.parent.frames.data) {
-				event.preventDefault();
-				window.parent.frames.data.location.href = link.href;
-			}
-		} catch (err) {
-			/* ignore cross-frame access issues and fall back to normal navigation */
-		}
-	}
-
-	document.addEventListener("click", loadInContentPane);
-})();
-</script>
 </head>
 <body>
 
