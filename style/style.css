@@ -1,9 +1,26 @@
 .fixme {font-size:15px; font-weight:bold; color:red; background-color:#ccc; display:block; border:2px solid red; padding:0.5em 1em;}
 
-body { color:black; background-color:ivory; }
+body { color:black; background-color:ivory; margin:0; }
 #dianz, #granz,  #tour { background-color:#EEEEEE; }
 
 body,h1,h2,h3,h4,p,ul,ol,li,dl,dt,dd,div,td,th,address,blockquote { font-family:Arial,sans-serif; }
+
+.page-shell { display:flex; align-items:flex-start; gap:2rem; max-width:1200px; margin:0 auto; padding:1rem; }
+
+.site-menu { flex:0 0 250px; padding:1rem; background-color:#f7f0e4; border:1px solid #d8c9b5; position:sticky; top:1rem; }
+
+.site-menu h2 { margin-top:0; margin-bottom:0.5rem; }
+
+.site-menu h3 { margin-top:1rem; margin-bottom:0.25rem; }
+
+.site-menu a { display:block; margin:0.25rem 0; }
+
+.site-content { flex:1; min-width:0; }
+
+@media (max-width: 800px) {
+	.page-shell { flex-direction:column; padding:0.75rem; }
+	.site-menu { position:static; width:auto; }
+}
 
 h1 { font-size:26px; margin-bottom:18px; }
 
