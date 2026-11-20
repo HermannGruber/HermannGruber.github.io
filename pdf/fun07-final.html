@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <title>Sorting the Slow Way: An Analysis of Perversely
+Awful Randomized Sorting Algorithms
+</title>
+    <meta content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style></style>
+  </head>
+  <body>
+  <img src="http://vg05.met.vgwort.de/na/974f1a8b26824b819b687ffb1cf9d02d" width="1" height="1" alt=""/>
+  <object data="fun07-final.pdf" type="application/pdf" width="100%" height="100%">
+  <p>No PDF plugin is installed for this browser. <a href="fun07-final.pdf">Click here</a> to
+  download the PDF.</p>
+<h2>Sorting the Slow Way: An Analysis of Perversely Awful Randomized Sorting Algorithms</h2>
+  <pre><em>Abstract.</em> This paper is devoted to the “Discovery of Slowness.” The
+archetypical perversely awful algorithm bogo-sort, which is sometimes
+referred to as Monkey-sort, is analyzed with elementary methods. More-
+over, practical experiments are performed.
+
+<em>Introduction</em>
+To our knowledge, the analysis of perversely awful algorithms can be tracked
+back at least to the seminal paper on pessimal algorithm design in 1984 [2]. But
+what’s a perversely awful algorithm? In the “The New Hacker’s Dictionary” [7]
+one finds the following entry:
+
+bogo-sort: /boh‘goh-sort’/ /n./ (var. ‘stupid-sort’) The archetypical perversely
+awful algorithm (as opposed to © bubble sort, which is merely the generic
+*bad* algorithm). Bogo-sort is equivalent to repeatedly throwing a deck of
+cards in the air, picking them up at random, and then testing whether they
+are in order. It serves as a sort of canonical example of awfulness. Looking at a
+program and seeing a dumb algorithm, one might say ”Oh, I see, this program
+uses bogo-sort.” Compare © bogus, © brute force, © Lasherism.
+
+Among other solutions, the formerly mentioned work contains a remarkably slow
+sorting algorithm named slowsort achieving running time Ω nlog n/(2+ǫ) even
+in the best case. But the running time, still being sub-exponential, does not
+improve (i.e., increase) in the average case, and not even in the worst case. On
+the contrary, the analysis of bogo-sort carried out here shows that this algo-
+rithm, while having best-case expected running time as low as O(n), achieves
+an asymptotic expected running time as high as Ω(n · n!) already in the average
+case. The pseudo code of bogo-sort reads as follows:
+
+Algorithm 1 Bogo-sort
+1: Input array a[1 . . . n]
+2: while a[1 . . . n] is not sorted do
+3:
+ randomly permute a[1 . . . n]
+4: end while
+
+The test whether the array is sorted as well as the permutation of the array
+have to be programmed with some care:
+
+1: procedure
+ sorted: {returns
+true if the array is sorted and
+false otherwise}
+2:
+ for i = 1 to n − 1 do
+3:
+ if a[i] > a[i + 1] then
+4:
+ return false
+5:
+ end if
+6:
+ end for
+7:
+ return true
+8:
+ end procedure
+1: procedure randomly permute:
+{permutes the array}
+2: for i = 1 to n − 1 do
+3:
+ j := rand[i . . . n]
+4:
+ swap a[i] and a[j]
+5: end for
+6: end procedure
+
+The second algorithm is found, e.g., in [5, p.139]. Hence the random permu-
+tation is done quickly by a single loop, where rand gives a random value in the
+specified range. And the test for sortedness is carried out from left and right.
+In this work we present a detailed analysis, including the exact determination
+of the expected number of comparisons and swaps in the best, worst and average
+case. Although there are some subtleties in the analysis, our proofs require only a
+basic knowledge of probability and can be readily understood by non-specialists.
+This makes the analysis well-suited to be included as motivating example in
+courses on randomized algorithms. Admittedly, this example does not motivate
+coursework on efficient randomized algorithms. But the techniques used in our
+analysis cover a wide range of mathematical tools as contained in textbooks such
+as [4].
+We will analyze the expected running time for bogo-sort under the usual
+assumption that we are given an array x = x 1 x2 . . . xn containing a permutation
+of the set of numbers {1, 2, . . . , n}. In a more abstract fashion, we are given a
+list containing all elements of a finite set S with |S| = n and an irreflexive,
+transitive and antisymmetric relation ⊏. To analyze the running time of the
+algorithm, which is a comparison-based sorting algorithm, we follow the usual
+convention of counting on one hand the number of comparisons, and on the other
+hand the number of swaps. An immediate observation is that the algorithm isn’t
+guaranteed to terminate at all. However, as we will prove that the expectation
+of the running time T is finite, we see by Markov’s inequality
+that the probability of this event equals 0. There are essentially two different
+initial configurations: Either the list x is initially sorted, or it is not sorted. We
+have to make this distinction as the algorithm is smart enough to detect if the
+given list is initially sorted, and has much better running time in this case. This
+nice built-in feature also makes the running time analysis in this case very easy:
+The number of total comparisons equals n − 1, and the total number of swaps
+equals zero, since the while-loop is never entered.
+We come to the case where the array is not initially sorted. Note that the
+first shuffle yields a randomly ordered list, so the behavior of the algorithm does
+no longer depend on the initial order; but the number of comparisons before the
+first shuffle depends on the structure of the original input.
+</pre>
+  </object>
+  </body>
+</html>

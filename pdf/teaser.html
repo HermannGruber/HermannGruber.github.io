@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <title>On the Descriptional and Algorithmic
+Complexity
+of Regular Languages
+</title>
+    <meta content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style></style>
+  </head>
+  <body>
+  <img src="http://vg05.met.vgwort.de/na/e12793cac43e4af5be014c243d783439" width="1" height="1" alt=""/>
+  <object data="teaser.pdf" type="application/pdf" width="100%" height="100%">
+  <p>No PDF plugin is installed for this browser. <a href="teaser.pdf">Click here</a> to
+  download the PDF.</p>
+  <pre>
+<h2>On the Descriptional and Algorithmic
+Complexity
+of Regular Languages</h2>
+<em>Preface</em>
+This thesis is a research monograph. As such, it targets at an audience of experts, primar-
+ily in the fields of foundations of computer science and discrete mathematics. Nevertheless,
+already several persons showed interest in understanding at least the main theme of this
+thesis, but have only little background in mathematics and computer science. This pref-
+ace can not serve a bluffer’s guide to the main body of work, but we try at best to explain
+at least the central abstractions at an informal level.
+The present work deals with mathematical models of computational processes. Several
+such models exist, each with its own advantages and characteristics. We will concentrate
+on the simplest of these models, namely on finite automata. An example drawn from
+everyday life naturally modeled as finite automaton is a vending machine. The observable
+behavior of a such a vending machine is described as sequence of atomic events. For
+simplicity, let us assume the possible events are: a coin worth one or two units of money is
+inserted, in symbols  or , a cup of coffee ∪ is requested and brewed, and alternatively
+the cancel button © can be hit. Thereafter some coins might be returned, actions for
+which we introduce the symbols x or y. Now the behavior of a correctly operating
+vending machine is described as a set of sequences made up from these symbols. We
+expect that most users of the machine will be content with the sequence
+x ∪  © y ∪ ,
+except possibly for the price of two money units for a cup of coffee. In contrast, the
+sequence
+ ∪  ©©© x ©©©©©
+is certainly not expected to be observed on a machine that operates correctly. We thus
+model the observable behavior of a vending machine as a set of sequences over some finite
+alphabet—in our example, this set will contain infinitely many correct sequences, but it
+will not include all possible sequences. The internal behavior can be modeled as a control
+unit, which is at each point in time in one of finitely many possible internal states. At
+this point, we mention that our vending machine always immediately returns overpaid
+amounts. In this way, we can retain a finite number of states. Otherwise it would be
+possible to insert arbitrarily large amounts of money before hitting the © button. In
+order to guarantee that it always returned the correct amount of money, such a machine
+would require a fairly large memory unit in that case.
+A mathematically precise model of a finite state control unit, such as the one found
+inside the vending machine, is the concept of a finite automaton. The set of sequences
+that form the behavior of a finite automaton is then a regular language.1 This model
+draws a clear distinction between the internal realization of the vending machine—the
+finite automaton—and its externally observable behavior—a regular language.
+An advantage of these notions is that once a prototype is developed, the designer may
+eventually want to replace the internal circuitry by an easer or cheaper one. The users
+will be content as long as the behavior of the new machine is the same as that of the old
+one. One part of this thesis is devoted to the question to what extent such simplifications
+can be automatically computed, while consuming only a reasonable amount of memory
+and computation time.
+The above scenario requires that the desired behavior of the vending machine is specified
+in the form of a prototype. There is also a more convenient way to specify the desired
+behavior. The behavior can be described by so-called regular expressions. These are a
+kind of formula that bear some superficial similarity to arithmetical expressions, or the
+formulas from mathematical logic. For mathematically trained persons, such formulas are
+often much easier to understand than the complex wiring diagrams of finite automata.
+The larger part of this thesis deals with questions regarding regular expressions. One such
+question is the following: Assume we already have a vending machine, but the formula
+specifying its behavior got lost. The problem is now to reverse-engineer a formula, in the
+form of a regular expression, from the wiring diagram of the machine. In order to remain
+understandable, the description of the behavior should of course be as short as possible.
+From a bird-eye’s perspective, this is similar to the process of translating (say) Latin to
+English. But instead of a description in Latin, we have a formal description in the form
+of a wiring diagram, and instead of translating it to English for easier understanding, we
+want to translate it into a regular expression. In both translation tasks, we will encounter
+sentences and constructs for which there is no direct analogue in the target language.
+Then we have to think about how to paraphrase these constructs, of course as succinctly
+as possible. This thesis aims to provide a deeper understanding about how smoothly this
+task can be accomplished.
+We will also seize the strength and limitations of regular expressions as a specification
+formalism. In the role of a requirements engineer, we often want to combine smaller frag-
+ments to specify more complex requirements. Astonishingly, we will find in this thesis
+that several very simple mechanisms of assembling more complex units cannot be easily
+described in the language of regular expressions—rather often, such combinations of re-
+quirements have to be circumscribed in an extremely cumbersome way. In these cases,
+practitioners may prefer to use more elaborate formalisms that are more succinct than
+regular expressions.
+We hope that also non-expert readers could catch a glimpse of the material treated in
+this thesis, and the type of questions addressed. For the expert audience, we hope that
+this short distraction served as a little canapé that wetted their appetite for the technical
+developments to come in the present thesis.
+
+<em>Collaborations</em>
+Some parts of this thesis arose from collaborative work, and we want to acknowledge
+these contributions. Contributions resulting from joint work with Markus Holzer were
+presented, partly in preliminary form, at the 10th, 11th, 12th and 13th International
+Conference on Developments in Language Theory [74, 77, 80, 83], at the 8th and 10th
+installments of the International Workshop on Descriptional Complexity of Formal Sys-
+tems [75, 81], at the 1st International Conference on Language and Automata Theory and
+
+<em>Acknowledgments</em>
+I would like to thank all persons who directly or indirectly contributed to this work. Any
+attempt of listing all contributions will be necessarily incomplete. I hope that at least the
+most immediate contributors are mentioned. First of all, I would like to thank my advisor,
+Markus Holzer, not only for his continuous support and advice, but also for his great care
+at reading a draft of this thesis. In this context, I would also like to thank Irmgard
+Kellerer, Martina Mensch and Renate Szweda for reading portions of a preliminary draft.
+I am indebted to Jan Johannsen for sharing his expertise in communication complexity
+with me, and for becoming enthusiastic about topics outside his main area of research.
+Thanks also goes to Jeffrey Shallit and Wouter Gelade for sending me preprints of their
+papers at times these did not appear yet in print. Finally, I thank all of my current and
+former colleagues for countless inspiring discussions.
+  </pre>
+  </object>
+  </body>
+</html>
